@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wyvern Download</title>
+  <title>Wyvern Secure Chat</title>
   <style>
     /* General reset */
     * {
@@ -13,7 +13,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -22,19 +22,29 @@
       background: linear-gradient(135deg, #0d0d0d, #1a0033);
       color: white;
       text-align: center;
+      font-weight: 300;
     }
 
     h1 {
-      font-size: 3rem;
-      font-weight: bold;
+      font-size: 3.5rem;
+      font-weight: 700;
       margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 5px;
+      letter-spacing: 8px;
+      color: #8a2be2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #dcdcdc;
     }
 
     p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #dcdcdc;
+      margin-bottom: 20px;
     }
 
     /* Download button */
@@ -42,17 +52,18 @@
       display: inline-block;
       background-color: #6200ea;
       color: white;
-      padding: 15px 30px;
+      padding: 18px 35px;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 30px;
     }
 
     .btn:hover {
       background-color: #8a2be2;
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     /* Particle animation */
@@ -71,8 +82,13 @@
 
   <div>
     <h1>Wyvern</h1>
-    <p>Download the latest version of Wyvern and unleash the power.</p>
-    <a href="your-download-link.zip" class="btn" download>Download Now</a>
+    <h2>The Most Secure Dark Web Chat</h2>
+    <p>Wyvern offers you the highest level of encryption for your texts, making it impossible for anyone to eavesdrop. With advanced security features, it’s built to keep your conversations private and your identity anonymous.</p>
+    <p>For a one-time fee of $75, you gain **lifetime access** to the most secure chat application ever created. But since you’ve been given exclusive access to this link, you’re getting it for **FREE**.</p>
+    <p><strong>Don't miss out on the ultimate security. Download Wyvern now and communicate with confidence.</strong></p>
+
+    <!-- Update the href link with the correct download file -->
+    <a href="wyvern-secure-chat.zip" class="btn" download>Download Now</a>
   </div>
 
   <script>
@@ -89,16 +105,17 @@
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 4 + 1;
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
-        this.color = `rgba(${Math.random() * 255}, 0, ${Math.random() * 255}, 0.8)`;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+        this.color = `rgba(255, 255, 255, ${Math.random() * 0.8 + 0.2})`; // White particles
       }
 
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
 
+        // Keep particles within screen bounds
         if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
       }
@@ -112,7 +129,7 @@
     }
 
     function initParticles() {
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 200; i++) { // Increased particle count
         particles.push(new Particle());
       }
     }
